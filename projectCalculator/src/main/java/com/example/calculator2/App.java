@@ -26,7 +26,8 @@ public class App {
             System.out.println("히스토리: " + calculator.getResults());
 
 
-            System.out.print("아무키나 입력하여 다시계산? (exit 입력 시 종료): ");
+            System.out.println("아무키나 입력하여 다시계산. (exit 입력 시 종료): ");
+            System.out.println("_______________________________________________");
             exit = sc.next();
 
         } while (!exit.equals("exit"));
