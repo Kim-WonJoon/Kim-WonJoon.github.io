@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class calculator2 {
-    //  필드
+    // 필드
     private Queue<Integer> results;
     private static final int maxResult = 3; // 최대 저장 개수
 
@@ -12,7 +12,6 @@ public class calculator2 {
     public calculator2() {
         results = new LinkedList<>();
     }
-
 
     public int calculate(int num1, int num2, char symbol) {
         int result = 0;
@@ -49,7 +48,18 @@ public class calculator2 {
         return result;
     }
 
+    // Getter
     public Queue<Integer> getResults() {
         return new LinkedList<>(results);
+    }
+
+    // Setter
+    public void setResults(Queue<Integer> newResults) {
+        if (newResults.size() > maxResult) {
+            while (newResults.size() > maxResult) {
+                newResults.poll();
+            }
+        }
+        this.results = new LinkedList<>(newResults);
     }
 }
